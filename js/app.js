@@ -42,3 +42,18 @@ async function submitForm(e, type) {
     btn.innerText = "Submit";
   }
 }
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+const themeToggle = document.getElementById("themeToggle");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark"
+  );
+});
