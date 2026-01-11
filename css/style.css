@@ -1,0 +1,147 @@
+:root {
+  --primary:#0f766e;
+  --secondary:#134e4a;
+  --light:#f0fdfa;
+  --dark:#0f172a;
+  --gray:#64748b;
+  --border:#e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* NAV */
+header {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul a {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--light), #fff);
+  padding: 80px 20px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1 { font-size: 2.5rem; }
+.hero p { color: var(--gray); margin: 20px 0; }
+
+.hero-image {
+  background: #ccfbf1;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+/* SECTIONS */
+section { padding: 70px 20px; }
+section h2 { text-align: center; margin-bottom: 10px; }
+.section-intro { text-align: center; color: var(--gray); margin-bottom: 40px; }
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FORMS */
+form { display: flex; flex-direction: column; gap: 12px; }
+
+input, select {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  color: #cbd5f5;
+  padding: 40px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 30px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
