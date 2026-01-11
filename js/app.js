@@ -1,14 +1,29 @@
 const API_URL = "PUT_YOUR_GOOGLE_SCRIPT_URL_HERE";
 
+// Mobile menu
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+// Dark mode
+const toggle = document.getElementById("themeToggle");
+toggle.onclick = () => {
+  const theme = document.body.dataset.theme === "dark" ? "" : "dark";
+  document.body.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+};
+
+document.body.dataset.theme = localStorage.getItem("theme") || "";
+
+// Forms
 async function submitForm(e, type) {
   e.preventDefault();
   const form = e.target;
-  const button = form.querySelector("button");
+  const btn = form.querySelector("button");
+  btn.disabled = true;
+  btn.innerText = "Submitting...";
 
-  button.disabled = true;
-  button.innerText = "Submitting...";
-
-  const payload = [...form.querySelectorAll("input, select")]
+  const payload = [...form.querySelectorAll("input,select")]
     .map(el => el.value.trim());
 
   try {
@@ -17,15 +32,13 @@ async function submitForm(e, type) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type, payload })
     });
-
     const data = await res.json();
     alert(data.message);
     form.reset();
-
   } catch {
     alert("Submission failed");
   } finally {
-    button.disabled = false;
-    button.innerText = "Submit";
+    btn.disabled = false;
+    btn.innerText = "Submit";
   }
 }
