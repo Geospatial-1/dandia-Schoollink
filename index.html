@@ -2,129 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dandia SchoolLink</title>
 
-  <title>Dandia SchoolLink | Smart School Communication & Student Mobility</title>
+  <meta name="description" content="Smart school communication and student transport coordination platform for schools, parents and riders." />
 
-  <!-- SEO -->
-  <meta name="description" content="Dandia SchoolLink helps schools, parents, and transport providers coordinate student transport and priority communication without storing school data." />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- MAIN CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Apple-like system font stack -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">Dandia SchoolLink</div>
-      <ul>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#schools">Schools</a></li>
-        <li><a href="#parents">Parents</a></li>
-        <li><a href="#transport">Transport</a></li>
-        <li><a href="#register">Register</a></li>
-      </ul>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">Dandia SchoolLink</div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#schools">Schools</a>
+      <a href="#parents">Parents</a>
+      <a href="#transport">Transport</a>
+      <a href="#register" class="nav-btn">Register</a>
     </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Smart School Communication & Student Mobility</h1>
-      <p>
-        A simple, secure way for schools, parents, and transport providers
-        to coordinate safely — without storing school data.
-      </p>
-      <div class="hero-actions">
-        <a href="#register" class="btn btn-primary">Register Your School</a>
-        <a href="#register" class="btn btn-outline">Parents & Riders</a>
-      </div>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Smart School Communication & Student Mobility</h1>
+    <p>
+      A reliable platform that helps schools, parents, and transport providers
+      coordinate student movement and urgent communication — without storing school data.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#register" class="btn primary">Register a School</a>
+      <a href="#register" class="btn secondary">Parents & Riders</a>
     </div>
-    <div class="hero-image"></div>
   </div>
 </section>
 
-<section>
-  <h2>Who It’s For</h2>
-  <p class="section-intro">Built to complement school systems, not replace them.</p>
+<!-- FEATURES -->
+<section id="features" class="section">
+  <h2>Why Dandia SchoolLink</h2>
+  <p class="section-intro">
+    Built for real schools, real parents, and real transport challenges.
+  </p>
 
-  <div class="container cards">
+  <div class="grid">
+    <div class="card">
+      <h3>Priority Notifications</h3>
+      <p>Parents receive urgent alerts even when offline.</p>
+    </div>
+    <div class="card">
+      <h3>No Data Lock-in</h3>
+      <p>We respect student data and adhere to privacypolicy. That is why no actual school data or student informationis stored in our servers. Schools securely stores and handle their own information. visit our privacy policy page for further information.</p>
+    </div>
+    <div class="card">
+      <h3>Flexible Transport</h3>
+      <p>Handle late buses, breakdowns, and emergencies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="section light">
+  <div class="grid">
     <div class="card" id="schools">
       <h3>Schools</h3>
-      <p>Send priority notifications, manage transport disruptions, and communicate better.</p>
+      <p>
+        Send fee reminders, Student health alerts, and transport updates.
+        Request riders instantly when needed.
+      </p>
     </div>
+
     <div class="card" id="parents">
       <h3>Parents</h3>
-      <p>Get urgent alerts and transport updates even when offline.</p>
+      <p>
+        Know when your child is picked, dropped, late, sick, or safe —
+        without chasing calls.
+      </p>
     </div>
+
     <div class="card" id="transport">
       <h3>Transport Providers</h3>
-      <p>Coordinate routes, identify students safely, and earn more.</p>
+      <p>
+        Receive pickup requests, verify students, optimize routes,
+        and earn extra income.
+      </p>
     </div>
   </div>
 </section>
 
-<section id="how">
-  <h2>How It Works</h2>
-  <p class="section-intro">Simple. Practical. School-ready.</p>
-
-  <div class="container steps">
-    <div class="step"><span>1.</span> School registers and links Google Sheets.</div>
-    <div class="step"><span>2.</span> Parents and drivers connect.</div>
-    <div class="step"><span>3.</span> Priority alerts and transport coordination.</div>
-  </div>
-</section>
-
-<section id="register">
+<!-- REGISTER -->
+<section id="register" class="section">
   <h2>Register</h2>
-  <p class="section-intro">Choose how you want to participate.</p>
+  <p class="section-intro">Choose your role to get started.</p>
 
-  <div class="container cards">
+  <div class="grid">
 
     <div class="card">
       <h3>School Registration</h3>
       <form onsubmit="submitForm(event,'school')">
-        <input required placeholder="School Name">
-        <input required placeholder="County">
-        <input required placeholder="Contact Person">
-        <input required placeholder="Phone">
-        <input required type="email" placeholder="Email">
-        <input required placeholder="Approx. Students">
+        <input required placeholder="School Name" />
+        <input required placeholder="County" />
+        <input required placeholder="Contact Person" />
+        <input required placeholder="Phone" />
+        <input type="email" placeholder="Email" />
+        <input required placeholder="Estimated Students" />
         <select required>
           <option value="">Has Transport?</option>
           <option>Yes</option>
           <option>No</option>
         </select>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn primary">Submit</button>
       </form>
     </div>
 
     <div class="card">
       <h3>Parent Registration</h3>
       <form onsubmit="submitForm(event,'parent')">
-        <input required placeholder="Full Name">
-        <input required placeholder="Phone">
-        <input type="email" placeholder="Email">
-        <input required placeholder="School Name">
-        <input required placeholder="Number of Children">
-        <input required placeholder="Residence">
-        <button class="btn btn-outline">Submit</button>
+        <input required placeholder="Full Name" />
+        <input required placeholder="Phone" />
+        <input placeholder="School Name" />
+        <input required placeholder="Number of Children" />
+        <input required placeholder="Residence" />
+        <button class="btn secondary">Submit</button>
       </form>
     </div>
 
     <div class="card">
       <h3>Rider Registration</h3>
       <form onsubmit="submitForm(event,'rider')">
-        <input required placeholder="Full Name">
-        <input required placeholder="Phone">
+        <input required placeholder="Full Name" />
+        <input required placeholder="Phone" />
         <select required>
           <option value="">Vehicle Type</option>
           <option>Motorcycle</option>
@@ -132,36 +151,20 @@
           <option>Van</option>
           <option>Bus</option>
         </select>
-        <input required placeholder="Vehicle Registration">
-        <input required placeholder="Route / Area">
-        <input required placeholder="Capacity">
-        <button class="btn btn-outline">Submit</button>
+        <input required placeholder="Vehicle Plate" />
+        <input required placeholder="Route / Area" />
+        <button class="btn secondary">Submit</button>
       </form>
     </div>
 
   </div>
 </section>
 
-<footer>
-  <div class="container footer-grid">
-    <div>
-      <h4>Dandia SchoolLink</h4>
-      <p>Smart communication & student mobility.</p>
-    </div>
-    <div>
-      <h4>Company</h4>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <a href="mailto:info@dandia.co.ke">info@dandia.co.ke</a>
-    </div>
-  </div>
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Dandia SchoolLink · Smart Communication & Mobility</p>
 </footer>
 
-<!-- MAIN JS -->
 <script src="js/app.js" defer></script>
-
 </body>
 </html>
